@@ -22,8 +22,8 @@ int main(int argc, char **argv)
 
     // checks if the arg count isnt 3
     if(argc != 3){
-        printf("Invalid syntax!");
-        printf("use 'cp --help' for help!");
+        printf("Invalid syntax!\n");
+        printf("use 'cp --help' for help!\n");
         return 1;
     }
 

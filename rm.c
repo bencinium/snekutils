@@ -23,8 +23,8 @@ int main(int argc, char **argv){
 
     // checks if the arg count is less than 3
     if(argc != 2){
-        printf("Invalid syntax!");
-        printf("use 'rm --help' for help!");
+        printf("Invalid syntax!\n");
+        printf("use 'rm --help' for help!\n");
         return 1;
     }
     // if target file is NULL then it does not exist

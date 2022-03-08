@@ -26,8 +26,8 @@ int main(int argc, char **argv)
 
     // checks if the arg count isnt exactly 3
     if(argc != 3){
-        printf("Invalid syntax!");
-        printf("use 'mv --help' for help!");
+        printf("Invalid syntax!\n");
+        printf("use 'mv --help' for help!\n");
         return 1;
     }
     // open source file

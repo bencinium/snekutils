@@ -25,8 +25,8 @@ int main(int argc, char **argv){
 
     // checks if the arg count is less than 4
     if(argc < 4){
-        printf("Invalid syntax!");
-        printf("use 'wr --help' for help!");
+        printf("Invalid syntax!\n");
+        printf("use 'wr --help' for help!\n");
         return 1;
     }
 
