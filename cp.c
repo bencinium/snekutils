@@ -20,7 +20,7 @@ int main(int argc, char **argv)
         return 0;
     }
 
-    // checks if the arg count is less than 3
+    // checks if the arg count isnt 3
     if(argc != 3){
         printf("Invalid syntax!");
         printf("use 'cp --help' for help!");

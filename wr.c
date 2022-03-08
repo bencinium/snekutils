@@ -9,8 +9,6 @@ int main(int argc, char **argv){
 
     source = fopen(argv[1], "w");
 
-
-
     // if arg 1 is --help, prints out the help message
     if(strcmp(argv[1], "--help") == 0 || strcmp(argv[1], "--h") == 0 ){
         printf("wr: Writes text to files\n");
@@ -25,7 +23,7 @@ int main(int argc, char **argv){
         return 0;
     }
 
-    // checks if the arg count is less than 3
+    // checks if the arg count is less than 4
     if(argc < 4){
         printf("Invalid syntax!");
         printf("use 'wr --help' for help!");

@@ -30,7 +30,7 @@ int main(int argc, char **argv)
         printf("use 'mv --help' for help!");
         return 1;
     }
-
+    // open source file
     source = fopen(argv[1], "r");
 
     // checks if source file exists
@@ -38,9 +38,9 @@ int main(int argc, char **argv)
         printf("File '%s' does not exist!", argv[1]);
         return 1;
     }
-
+    // moves source file to target file, if it errors out then you dont have permission.
     if(!rename(argv[1], argv[2])){
-        
+        return 0;
     }else{
         printf("Unable to write target file, do you have permissions?\n");
         return 1;
