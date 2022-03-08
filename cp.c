@@ -19,6 +19,14 @@ int main(int argc, char **argv)
         printf("version 1.0\n");
         return 0;
     }
+
+    // checks if the arg count is less than 3
+    if(argc != 3){
+        printf("Invalid syntax!");
+        printf("use 'cp --help' for help!");
+        return 1;
+    }
+
     // reads the source file
     source = fopen(argv[1], "r");
 

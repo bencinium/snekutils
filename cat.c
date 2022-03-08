@@ -20,6 +20,14 @@ int main(int argc, char **argv){
         printf("version 1.0\n");
         return 0;
     }
+
+    // checks if the arg count is less than 3
+    if(argc != 2){
+        printf("Invalid syntax!");
+        printf("use 'cat --help' for help!");
+        return 1;
+    }
+
     source = fopen(argv[1], "r");
 
     if (source == NULL){

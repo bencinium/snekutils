@@ -8,6 +8,8 @@ int main(int argc, char **argv)
   
     FILE *source, *target;
     
+
+
     // if arg 1 is --help, prints out the help message
     if(strcmp(argv[1], "--help") == 0 || strcmp(argv[1], "--h") == 0 ){
         printf("mv: Moves a file to target file\n");
@@ -20,6 +22,13 @@ int main(int argc, char **argv)
         printf("mv command, part of snekutils\n");
         printf("version 1.0\n");
         return 0;
+    }
+
+    // checks if the arg count isnt exactly 3
+    if(argc != 3){
+        printf("Invalid syntax!");
+        printf("use 'mv --help' for help!");
+        return 1;
     }
 
     source = fopen(argv[1], "r");
