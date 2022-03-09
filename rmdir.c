@@ -33,7 +33,7 @@ int main(int argc, char **argv){
     // checks if rmdir returns error
     errno = 0;
     int ret = rmdir(argv[1]);
-    if (errno == -1){
+    if (ret == -1){
         switch (errno) {
             case EACCES :
                 printf("No permission to write!\n");
