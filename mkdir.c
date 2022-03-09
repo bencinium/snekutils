@@ -1,3 +1,4 @@
+#include <asm-generic/errno-base.h>
 #include <stdio.h>
 #include <string.h>
 #include <sys/stat.h>
@@ -26,7 +27,7 @@ int main(int argc, char **argv){
         printf("use 'mkdir --help' for help!\n");
         return 1;
     }
-
+    // makes a directory, checks if mkdir returns an error code.
     errno = 0;
     int ret = mkdir(argv[1], S_IRWXU);
     if (ret == -1) {
@@ -40,9 +41,12 @@ int main(int argc, char **argv){
             case ENAMETOOLONG:
                 printf("Directory name too long!\n");
                 return 3;
+            case EROFS:
+                printf("Read only filesystem!\n");
+                return 4;
             default:
                 perror("mkdir\n");
-                return 4;
+                return 5;
         }
     }
     return 0;

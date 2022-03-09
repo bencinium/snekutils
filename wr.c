@@ -29,13 +29,13 @@ int main(int argc, char **argv){
         printf("use 'wr --help' for help!\n");
         return 1;
     }
-
+    // if source is null then the file does not exist
     if(source == NULL){
         printf("File '%s' does not exist!", argv[1]);
         return 1;
     }
 
-
+    // for each arg, print the args in specified file
     for(i=2 ; i<argc ; i++)
     {
         fprintf(source, "%s ", argv[i]);
