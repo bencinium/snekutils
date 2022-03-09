@@ -15,7 +15,7 @@ int main(int argc, char **argv){
     if((target = fopen(argv[1], "w"))){
         return 0;
     }else{
-        printf("Cannot write file! Do you have permissions?\n");
+        printf("touch: Cannot write file! Do you have permissions?\n");
         return 1;
     }
 

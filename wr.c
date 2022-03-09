@@ -31,7 +31,7 @@ int main(int argc, char **argv){
     }
     // if source is null then the file does not exist
     if(source == NULL){
-        printf("File '%s' does not exist!", argv[1]);
+        printf("wr: File '%s' does not exist!", argv[1]);
         return 1;
     }
 

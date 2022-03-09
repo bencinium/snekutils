@@ -35,14 +35,14 @@ int main(int argc, char **argv)
 
     // checks if source file exists
     if(source == NULL){
-        printf("File '%s' does not exist!", argv[1]);
+        printf("mv: File '%s' does not exist!", argv[1]);
         return 1;
     }
     // moves source file to target file, if it errors out then you dont have permission.
     if(!rename(argv[1], argv[2])){
         return 0;
     }else{
-        printf("Unable to write target file, do you have permissions?\n");
+        printf("mv: Unable to write target file, do you have permissions?\n");
         return 1;
     }
 

@@ -38,6 +38,6 @@ int main(int argc, char **argv){
         fprintf(stderr, "rmdir %s: %s\n", argv[1], strerror(errno));
         return 2;
     }
-    
+
     return 0;
 }

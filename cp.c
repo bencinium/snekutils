@@ -32,14 +32,14 @@ int main(int argc, char **argv)
 
     // if source is null, the file doesn't exist.
     if (source == NULL){
-        printf("File '%s' does not exist.\n", argv[1]);
+        printf("cp: File '%s' does not exist.\n", argv[1]);
         return 1;
     }
 
     // checks if target file already exists
     if ((target = fopen(argv[2], "r"))) {
       fclose(target);
-      printf("File '%s' already exists!\n", argv[2]);
+      printf("cp: File '%s' already exists!\n", argv[2]);
       return 1;
     } 
     // writes the target file
@@ -48,7 +48,7 @@ int main(int argc, char **argv)
     // if target is null, the user forgot to input the target file.
     if (target == NULL){
         fclose(source);
-        printf("Invalid Syntax! Use the --help flag for help.\n");
+        printf("cp: Invalid Syntax! Use the --help flag for help.\n");
         return 1;
     }
 

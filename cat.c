@@ -31,7 +31,7 @@ int main(int argc, char **argv){
     source = fopen(argv[1], "r");
 
     if (source == NULL){
-        printf("File '%s' does not exist!", argv[1]);
+        printf("cat: File '%s' does not exist!", argv[1]);
         return 1;
     }
 

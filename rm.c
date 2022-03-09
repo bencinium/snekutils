@@ -29,14 +29,14 @@ int main(int argc, char **argv){
     }
     // if target file is NULL then it does not exist
     if(target == NULL){
-        printf("File '%s' does not exist!\n", argv[1]);
+        printf("rm: File '%s' does not exist!\n", argv[1]);
         return 1;
     }
     // removes the target file, if it cant then you dont have permission.
     if(!remove(argv[1])){
         return 0;
     } else {
-        printf("Cannot remove file! Do you have permissions?\n");
+        printf("rm: Cannot remove file! Do you have permissions?\n");
         return 1;
     }
 
