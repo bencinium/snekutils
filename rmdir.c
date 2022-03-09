@@ -33,36 +33,11 @@ int main(int argc, char **argv){
     // checks if rmdir returns error
     errno = 0;
     int ret = rmdir(argv[1]);
-    if (ret == -1){
-        switch (errno) {
-            case EACCES :
-                printf("No permission to write!\n");
-                return 1;
-            case ENOENT:
-                printf("Directory does not exist!\n");
-                return 2;
-            case ENAMETOOLONG:
-                printf("Directory name too long!\n");
-                return 3;
-            case ENOTEMPTY:
-                printf("Directory is not empty!\n");
-                return 4;
-            case ENOTDIR:
-                printf("Specified file is not a directory!\n");
-                return 5;
-            case EROFS:
-                printf("Read only filesystem!\n");
-                return 6;
-            case EBUSY:
-                printf("Directory is currently in use!\n");
-                return 7;
-            case EIO:
-                printf("An I/0 error has occured!\n");
-                return 8;
-            default:
-                perror("mkdir\n");
-                return 9;
-        }
+
+    if(ret == -1){
+        fprintf(stderr, "rmdir %s: %s\n", argv[1], strerror(errno));
+        return 2;
     }
+    
     return 0;
 }

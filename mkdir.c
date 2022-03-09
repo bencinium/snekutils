@@ -30,24 +30,11 @@ int main(int argc, char **argv){
     // makes a directory, checks if mkdir returns an error code.
     errno = 0;
     int ret = mkdir(argv[1], S_IRWXU);
-    if (ret == -1) {
-        switch (errno) {
-            case EACCES :
-                printf("No permission to write!\n");
-                return 1;
-            case EEXIST:
-                printf("Directory already exists!\n");
-                return 2;
-            case ENAMETOOLONG:
-                printf("Directory name too long!\n");
-                return 3;
-            case EROFS:
-                printf("Read only filesystem!\n");
-                return 4;
-            default:
-                perror("mkdir\n");
-                return 5;
-        }
+
+    if(ret == -1){
+        fprintf(stderr, "mkdir %s: %s\n", argv[1], strerror(errno));
+        return 2;
     }
+
     return 0;
 }
