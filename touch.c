@@ -8,7 +8,7 @@ int main(int argc, char **argv){
     // checks if target file already exists
     if ((target = fopen(argv[1], "r"))) {
       fclose(target);
-      printf("File '%s' already exists!\n", argv[1]);
+      printf("touch: File '%s' already exists!\n", argv[1]);
       return 1;
     } 
     // writes the target file, if it cant then it errors out
