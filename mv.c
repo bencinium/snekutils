@@ -5,8 +5,8 @@
 int main(int argc, char **argv)
 {   
 
-    // checks if the arg count isnt exactly 3
-    if(argc != 3){
+    // checks if the arg count is lower than 2 or higher than 3
+    if(argc < 2 || argc > 3){
         printf("Invalid syntax!\n");
         printf("use 'mv --help' for help!\n");
         return 1;
