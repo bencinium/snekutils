@@ -3,6 +3,13 @@
 
 int main(int argc, char **argv){
 
+    // checks if the arg count isnt 2
+    if(argc != 2){
+        printf("Invalid syntax!\n");
+        printf("use 'wr --help' for help!\n");
+        return 1;
+    }
+
     FILE *target;
 
     // checks if target file already exists

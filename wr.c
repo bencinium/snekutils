@@ -3,6 +3,13 @@
 
 int main(int argc, char **argv){
 
+    // checks if the arg count is less than 3
+    if(argc < 3){
+        printf("Invalid syntax!\n");
+        printf("use 'wr --help' for help!\n");
+        return 1;
+    }
+
     int i;
 
     FILE *source;
@@ -23,12 +30,7 @@ int main(int argc, char **argv){
         return 0;
     }
 
-    // checks if the arg count is less than 3
-    if(argc < 3){
-        printf("Invalid syntax!\n");
-        printf("use 'wr --help' for help!\n");
-        return 1;
-    }
+
     // if source is null then the file does not exist
     if(source == NULL){
         printf("wr: File '%s' does not exist!", argv[1]);

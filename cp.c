@@ -3,6 +3,13 @@
 
 int main(int argc, char **argv)
 {
+    // checks if the arg count isnt 3
+    if(argc != 3){
+        printf("Invalid syntax!\n");
+        printf("use 'cp --help' for help!\n");
+        return 1;
+    }
+
    char ch;
   
    FILE *source, *target;
@@ -20,12 +27,7 @@ int main(int argc, char **argv)
         return 0;
     }
 
-    // checks if the arg count isnt 3
-    if(argc != 3){
-        printf("Invalid syntax!\n");
-        printf("use 'cp --help' for help!\n");
-        return 1;
-    }
+
 
     // reads the source file
     source = fopen(argv[1], "r");

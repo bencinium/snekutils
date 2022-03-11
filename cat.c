@@ -3,6 +3,14 @@
 
 int main(int argc, char **argv){
 
+
+    // checks if the arg count isnt 2
+    if(argc != 2){
+        printf("Invalid syntax!\n");
+        printf("use 'cat --help' for help!\n");
+        return 1;
+    }
+
     char ch;
 
     FILE *source;
@@ -21,12 +29,6 @@ int main(int argc, char **argv){
         return 0;
     }
 
-    // checks if the arg count isnt 2
-    if(argc != 2){
-        printf("Invalid syntax!\n");
-        printf("use 'cat --help' for help!\n");
-        return 1;
-    }
 
     source = fopen(argv[1], "r");
 
