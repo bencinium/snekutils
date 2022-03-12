@@ -5,6 +5,8 @@
 
 int main(){
 
+ 
+
     errno = 0;
     int ret = printf("%s\n", getlogin());
 

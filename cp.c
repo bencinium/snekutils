@@ -1,12 +1,12 @@
 #include <stdio.h>
-#include <string.h>
+#include <getopt.h>
 
 int main(int argc, char **argv)
 {
     // checks if the arg count is lower than 2 or higher than 3
     if(argc < 2 || argc > 3){
         printf("Invalid syntax!\n");
-        printf("use 'cp --help' for help!\n");
+        printf("use 'cp -h' for help!\n");
         return 1;
     }
 
@@ -14,17 +14,23 @@ int main(int argc, char **argv)
   
    FILE *source, *target;
 
-    // if arg 1 is --help, prints out the help message
-    if(strcmp(argv[1], "--help") == 0 || strcmp(argv[1], "--h") == 0 ){
-        printf("Syntax:\n");
-        printf("cp [file] [target]\n");
-        return 0;
-
-    // if arg 1 is --version, prints out version message
-    } else if(strcmp(argv[1], "--version") == 0 || strcmp(argv[1], "--v") == 0 || strcmp(argv[1], "--ver") == 0){
-        printf("cp command, part of snekutils\n");
-        printf("version 1.0\n");
-        return 0;
+    int c;
+    while ((c = getopt (argc, argv, "hv")) != -1){
+    switch (c)
+      {
+        case 'h':
+            printf("cp: Copies a file to another file\n");
+            printf("Syntax:\n");
+            printf("cp [source file] [target file]\n");
+            return 0;
+        case 'v':     
+            printf("mkdir command, part of snekutils\n");
+            printf("version 1.0\n");
+            return 0;
+        default:
+            return 0;
+    
+      }
     }
 
 

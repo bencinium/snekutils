@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h>
+#include <getopt.h>
 
 int main(int argc, char **argv){
 
@@ -7,7 +7,7 @@ int main(int argc, char **argv){
     // checks if the arg count isnt 2
     if(argc != 2){
         printf("Invalid syntax!\n");
-        printf("use 'cat --help' for help!\n");
+        printf("use 'cat -h' for help!\n");
         return 1;
     }
 
@@ -15,30 +15,35 @@ int main(int argc, char **argv){
 
     FILE *source;
 
-      // if arg 1 is --help, prints out the help message
-    if(strcmp(argv[1], "--help") == 0 || strcmp(argv[1], "--h") == 0 ){
-        printf("cat: Prints out file contents to stdout\n");
-        printf("Syntax:\n");
-        printf("cat [file] \n");
-        return 0;
-
-    // if arg 1 is --version, prints out version message
-    } else if(strcmp(argv[1], "--version") == 0 || strcmp(argv[1], "--v") == 0 || strcmp(argv[1], "--ver") == 0){
-        printf("cat command, part of snekutils\n");
-        printf("version 1.0\n");
-        return 0;
+    int c;
+    while ((c = getopt (argc, argv, "hv")) != -1){
+    switch (c)
+      {
+        case 'h':
+            printf("cat: Prints out the content of files\n");
+            printf("Syntax:\n");
+            printf("cat [file]\n");
+            return 0;
+        case 'v':     
+            printf("cat command, part of snekutils\n");
+            printf("version 1.0\n");
+            return 0;
+        default:
+            return 0;
+    
+      }
     }
 
 
     source = fopen(argv[1], "r");
 
     if (source == NULL){
-        printf("cat: File '%s' does not exist!", argv[1]);
+        printf("cat: File '%s' does not exist!\n", argv[1]);
         return 1;
     }
 
     while((ch = fgetc(source)) != EOF){
-      printf("%c", ch);
+      putchar(ch);
       
     }
     printf("\n");
