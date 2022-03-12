@@ -24,7 +24,7 @@ int main(int argc, char **argv)
             printf("cp [source file] [target file]\n");
             return 0;
         case 'v':     
-            printf("mkdir command, part of snekutils\n");
+            printf("cp command, part of snekutils\n");
             printf("version 1.0\n");
             return 0;
         default:

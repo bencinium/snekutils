@@ -3,19 +3,6 @@
 #include <getopt.h>
 int main(int argc, char **argv){
 
-    // checks if the arg count is less than 3
-    if(argc < 3){
-        printf("Invalid syntax!\n");
-        printf("use 'wr -h' for help!\n");
-        return 1;
-    }
-
-    int i;
-
-    FILE *source;
-
-    source = fopen(argv[1], "w");
-
     int c;
     while ((c = getopt (argc, argv, "hv")) != -1){
     switch (c)
@@ -34,6 +21,21 @@ int main(int argc, char **argv){
     
       }
     }
+
+    // checks if the arg count is less than 3
+    if(argc < 3){
+        printf("Invalid syntax!\n");
+        printf("use 'wr -h' for help!\n");
+        return 1;
+    }
+
+    int i;
+
+    FILE *source;
+
+    source = fopen(argv[1], "w");
+
+
 
 
     // if source is null then the file does not exist
